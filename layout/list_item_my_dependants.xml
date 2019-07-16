@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dependants"
+            type="com.mobipesa.nilipieapp.models.DependantItem" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/item_horizontal_margin"
+        android:layout_marginTop="@dimen/item_horizontal_margin"
+        android:layout_marginEnd="@dimen/item_horizontal_margin"
+        android:background="@drawable/grey_round_corner_rect"
+        android:padding="@dimen/_5sdp"
+        android:theme="@style/CustomTheme">
+
+        <TextView
+            android:id="@+id/customer_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginLeft="@dimen/_2sdp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:contentDescription="@string/loanee_name"
+            android:fontFamily="@font/gotham"
+            android:maxLines="2"
+            android:text='@{dependants.name}'
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Agnes" />
+
+        <TextView
+            android:id="@+id/upperLimit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gotham"
+            android:maxLines="3"
+            android:text="@{dependants.upperLimit}"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="@+id/customer_name"
+            app:layout_constraintStart_toStartOf="@+id/customer_name"
+            app:layout_constraintTop_toBottomOf="@+id/customer_name"
+            tools:text="6000" />
+
+        <TextView
+            android:id="@+id/limitBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/gotham"
+            android:maxLines="3"
+            android:text="@{dependants.limitBalance}"
+            android:textColor="@color/colorText"
+            app:layout_constraintEnd_toEndOf="@+id/customer_name"
+            app:layout_constraintStart_toStartOf="@+id/customer_name"
+            app:layout_constraintTop_toBottomOf="@+id/customer_name"
+            tools:text="6000" />
+
+        <ImageButton
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/edit_dependant" />
+
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_delete" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

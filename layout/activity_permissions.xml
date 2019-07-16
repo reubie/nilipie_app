@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isPermission"
+            type="boolean" />
+
+        <variable
+            name="callback"
+            type="com.mobipesa.nilipieapp.interfaces.SwitchClickCallback" />
+
+        <variable
+            name="isError"
+            type="boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:max="100"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/sms_switch"
+                    style="@style/SwitchCompatStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/superWhite"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:fontFamily="@font/gotham"
+                    android:text="@string/read_sms"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+                <TextView
+                    android:id="@+id/SMS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gotham"
+                    android:textColor="@color/superWhite"
+                    android:text="Used to understand your financial history. This helps us give you better rates  on our platform"
+                    app:layout_constraintStart_toStartOf="@+id/sms_switch"
+                    app:layout_constraintTop_toBottomOf="@+id/sms_switch" />
+
+
+                <TextView
+                    android:id="@+id/contacts_switch"
+                    style="@style/SwitchCompatStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/gotham"
+                    android:text="@string/read_phone"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/superWhite"
+                    app:layout_constraintEnd_toEndOf="@+id/sms_switch"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/sms_switch"
+                    app:layout_constraintTop_toBottomOf="@+id/SMS" />
+
+                <TextView
+                    android:id="@+id/contacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/superWhite"
+                    android:fontFamily="@font/gotham"
+                    android:text="Used to ensure your account can only be used on this phone. This is done to preserve accuracy of our user data and help prevent fraud"
+                    app:layout_constraintStart_toStartOf="@+id/contacts_switch"
+                    app:layout_constraintTop_toBottomOf="@+id/contacts_switch" />
+
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <ImageView
+                    android:id="@+id/error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/error_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/guideline"
+                    app:srcCompat="@drawable/ic_error_outline" />
+
+                <TextView
+                    android:id="@+id/error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:fontFamily="@font/gotham"
+                    android:text="@string/error_in_connection"
+                    android:textColor="@color/superWhite"
+                    app:layout_constraintEnd_toEndOf="@+id/error"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/error"
+                    app:layout_constraintTop_toBottomOf="@+id/error" />
+
+
+                <TextView
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="92dp"
+                    android:background="@drawable/orange_round_corner_rect"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="@{() -> callback.onClick()}"
+                    android:text="@string/accept_permissions"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.49"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/contacts" />
+
+
+                <TextView
+                    android:id="@+id/btn_error"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/gray_rect"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="@{() -> callback.onRetryClick()}"
+                    android:text="@string/retry"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintEnd_toEndOf="@+id/error_txt"
+                    app:layout_constraintStart_toStartOf="@+id/error_txt"
+                    app:layout_constraintTop_toBottomOf="@+id/error_txt" />
+
+
+                <android.support.constraint.Group
+                    android:id="@+id/permission_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="btn_confirm,SMS,contacts,contacts_switch,sms_switch"
+                    app:visibleGone="@{isPermission}"
+                    tools:visibility="visible" />
+
+                <android.support.constraint.Group
+                    android:id="@+id/error_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="btn_error,error_txt,error"
+                    app:visibleGone="@{isError}"
+                    tools:visibility="gone" />
+
+            </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

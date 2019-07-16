@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="defaultTextColor" format="reference" />
+    <attr name="defaultDarkTextColor" format="reference" />
+    <attr name="defaultButtonTextColor" format="reference" />
+    <attr name="defaultPreviousButtonColor" format="reference" />
+    <attr name="defaultNextButtonColor" format="reference" />
+    <attr name="defaultToolBarBackgroundColor" format="reference" />
+    <attr name="defaultNextLineColor" format="reference" />
+    <attr name="defaultVisitedDotColor" format="reference" />
+    <attr name="defaultClickedLineColor" format="reference" />
+</resources>

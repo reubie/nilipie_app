@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/header_image"
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/code_prompt"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/header_image"
+        app:layout_constraintEnd_toEndOf="@+id/header_image"
+        app:layout_constraintStart_toStartOf="@+id/header_image"
+        app:layout_constraintTop_toTopOf="@+id/header_image" />
+
+
+    <TextView
+        android:id="@+id/go_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="end"
+        android:padding="@dimen/_3sdp"
+        android:text="@string/change_number"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/otp_prompt"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/otp"
+        app:layout_constraintStart_toStartOf="@+id/otp"
+        app:layout_constraintTop_toBottomOf="@id/otp"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+
+    <com.poovam.pinedittextfield.LinePinField
+        android:id="@+id/otp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:focusable="true"
+        android:textSelectHandle="@drawable/text_handle"
+        android:textSize="@dimen/_24ssp"
+        android:textColor="@color/colorBlackish"
+        app:highlightSingleFieldMode="true"
+        app:highlightColor="@color/colorPrimary"
+        app:isCursorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/timer_secs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:noOfFields="4" />
+
+
+    <TextView
+        android:id="@+id/timer_secs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:text="55 sec"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12.7sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/resend_otp"
+        app:layout_constraintEnd_toEndOf="@+id/resend_otp"
+        app:layout_constraintStart_toStartOf="@+id/resend_otp"
+        app:layout_constraintTop_toBottomOf="@+id/otp" />
+
+    <TextView
+        android:id="@+id/resend_otp"
+        android:padding="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:text="@string/resend_otp"
+        android:clickable="true"
+        android:textColor="#9e9e9e"
+        android:textSize="12.7sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@+id/timer_secs" />
+
+</android.support.constraint.ConstraintLayout>

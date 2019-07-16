@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/profile_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_frag">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_frag"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/bg"
+            android:minHeight="?android:attr/actionBarSize"
+            android:theme="@style/ToolBarStyle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleTextColor="@color/colorWhite" />
+
+
+        <RadioGroup
+            android:id="@+id/choose_mode_of_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_frag">
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/mpesa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="onRadioButtonClick"
+                android:text="@string/mpesa"
+                android:textColor="@color/superWhite"
+                android:textSize="@dimen/_15ssp"
+                app:buttonTint="@color/superWhite" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClick"
+                android:text="@string/bank"
+                android:textColor="@color/superWhite"
+                android:textSize="@dimen/_15ssp"
+                app:buttonTint="@color/superWhite" />
+
+            <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/airtel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClick"
+                android:text="@string/airtel"
+                android:textColor="@color/superWhite"
+                android:textSize="@dimen/_15ssp"
+                app:buttonTint="@color/superWhite" />
+
+        </RadioGroup>
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/text_constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/pay_text"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_marginTop="28dp"
+                app:errorEnabled="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:hint="@string/enter_transaction_type"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/guideline" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/account_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="@+id/pay_text"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/pay_text"
+                app:layout_constraintTop_toBottomOf="@+id/pay_text">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/colorAccent"
+                    android:hint="@string/account_number"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_13ssp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/short_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="@+id/pay_text"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/account_number"
+                app:layout_constraintTop_toBottomOf="@+id/account_number">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/colorAccent"
+                    android:hint="@string/shortCode"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_13ssp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/pay_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="@+id/short_code"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/short_code"
+                app:layout_constraintTop_toBottomOf="@+id/short_code">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/colorAccent"
+                    android:hint="@string/transaction_id"
+                    android:inputType="text"
+                    android:maxLength="15"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_13ssp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/phoneNumber"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="@+id/pay_code"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/pay_code"
+                app:layout_constraintTop_toBottomOf="@+id/pay_code">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:hint="@string/phone_number"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_13ssp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/amount"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="@+id/pay_code"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/phoneNumber"
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumber">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:hint="@string/amount"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_13ssp" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/buttonPay"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="@string/pay"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

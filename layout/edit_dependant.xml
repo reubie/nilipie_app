@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/edi_text"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="340dp"
+        android:layout_marginLeft="340dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:background="@drawable/edit_dependant"
+        tools:layout_editor_absoluteY="27dp" />
+
+
+
+    <EditText
+        android:id="@+id/limit"
+        android:layout_width="420dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:hint="@string/maximum_amount"
+        android:inputType="text"
+        android:maxLength="15"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addDependant" />
+
+    <RadioGroup
+        android:id="@+id/contacts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/limit">
+
+        <RadioButton
+            android:id="@+id/phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            tools:text="Add from contacts"/>
+
+        <RadioButton
+            android:id="@+id/manual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            tools:text="Add manually" />
+
+
+   </RadioGroup>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/custom_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:backgroundTint="@color/colorPrimary"
+        android:hint="@string/enter_phone"
+        android:inputType="number"
+        android:maxLength="12"
+        android:visibility="gone"
+        android:singleLine="true"
+        android:textColor="#000"
+        android:textColorHint="@color/colorBlackish"
+        app:layout_constraintStart_toStartOf="@+id/contacts"
+        app:layout_constraintTop_toBottomOf="@+id/contacts"
+        tools:ignore="UnusedAttribute" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/custom_input_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:backgroundTint="@color/colorPrimary"
+        android:hint="@string/dependant_name"
+        android:inputType="text"
+        android:visibility="gone"
+        android:singleLine="true"
+        android:textColor="#000"
+        android:textColorHint="@color/colorBlackish"
+        app:layout_constraintStart_toStartOf="@+id/custom_input"
+        app:layout_constraintTop_toBottomOf="@+id/custom_input"
+        tools:ignore="UnusedAttribute" />
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

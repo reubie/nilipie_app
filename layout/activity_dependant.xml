@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="agent"
+            type="com.mobipesa.nilipieapp.dependants.DependantActivity" />
+
+        <variable
+            name="isPrincipal"
+            type="boolean" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWindowBackground"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_frag"
+                android:layout_width="match_parent"
+                android:layout_height="218dp"
+                android:background="@color/colorPrimary"
+                android:minHeight="?android:attr/actionBarSize"
+                android:theme="@style/ToolBarStyle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="@color/colorWhite" />
+
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/loan_request_amount_text"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:text="Amount"-->
+                <!--android:textSize="@dimen/_14ssp"-->
+                <!--app:layout_constraintEnd_toEndOf="@+id/loan_request_amount"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/loan_request_amount"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/pending_request_text" />-->
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/loan_request_amount"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="8dp"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginEnd="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:fontFamily="@font/gothamroundbook"-->
+                <!--android:text="@{@string/account_balance(agent.account_balance)}"-->
+                <!--android:textSize="@dimen/_38ssp"-->
+                <!--app:layout_constraintEnd_toEndOf="parent"-->
+                <!--app:layout_constraintHorizontal_bias="0.502"-->
+                <!--app:layout_constraintStart_toStartOf="parent"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/loan_request_amount_text"-->
+                <!--tools:text="3,000" />-->
+
+            <Button
+                android:id="@+id/manageDependants"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/grey_round_corner_rect"
+                android:drawableEnd="@drawable/add_dependant"
+                android:drawableRight="@drawable/add_dependant"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="@string/add_dependants"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/managePrincipals"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/grey_round_corner_rect"
+                android:drawableEnd="@drawable/add_dependant"
+                android:drawableRight="@drawable/add_dependant"
+                android:gravity="start|center_vertical"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingLeft="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="@string/manage_principal"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

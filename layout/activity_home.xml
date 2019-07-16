@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/header_image"
+        android:layout_width="294dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/notifications_image"
+        android:layout_width="@dimen/_37sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+            android:src="@drawable/notification_blank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<com.nex3z.notificationbadge.NotificationBadge-->
+        <!--android:id="@+id/badge"-->
+        <!--android:layout_width="28dp"-->
+        <!--android:layout_height="28dp"-->
+        <!--android:layout_alignTop="@+id/image"-->
+        <!--android:layout_alignEnd="@+id/image"-->
+        <!--android:layout_alignRight="@+id/image"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:nbBackground="@drawable/badge_bg"-->
+        <!--app:nbMaxTextLength="2" />-->
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/account_image"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="4dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notifications_image"
+        tools:background="@drawable/account" />
+
+
+    <TextView
+        android:id="@+id/account_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/gotham"
+        android:gravity="center_horizontal"
+        android:textColor="@color/superWhite"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toTopOf="@+id/account_phone"
+        app:layout_constraintStart_toEndOf="@+id/account_image"
+        app:layout_constraintTop_toTopOf="@+id/account_image"
+        tools:text="AGNES MUSYOKA" />
+
+    <TextView
+        android:id="@+id/account_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/gotham"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/account_image"
+        app:layout_constraintStart_toStartOf="@+id/account_name"
+        tools:text="+254715229228" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="191dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/balance_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/gotham"
+                android:gravity="center_horizontal"
+                android:text="@string/current_balance"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/account_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawableLeft="@drawable/ic_lock"
+                android:focusable="true"
+                android:fontFamily="@font/gotham"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> callback.onButtonClick()}"
+                android:text="@string/hidden_amount"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/balance_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/balance_text" />
+
+
+            <View
+                android:id="@+id/borderView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="false"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/balance_text" />
+
+
+            <ImageView
+                android:id="@+id/paybill"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="88dp"
+                android:layout_marginLeft="88dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="@string/background"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/paybill"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buygoods"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/borderView"
+                app:layout_constraintVertical_bias="0.508" />
+
+
+            <TextView
+                android:id="@+id/create_loan_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/gotham"
+                android:gravity="center_horizontal"
+                android:text="@string/paybill"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@+id/paybill"
+                app:layout_constraintStart_toStartOf="@+id/paybill"
+                app:layout_constraintTop_toBottomOf="@+id/paybill" />
+
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+
+
+            <ImageView
+                android:id="@+id/buygoods"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="@string/background"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/buy_goods"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.58"
+                app:layout_constraintStart_toEndOf="@+id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/borderView"
+                app:layout_constraintVertical_bias="0.508" />
+
+
+            <TextView
+                android:id="@+id/buyGoods_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/gotham"
+                android:gravity="center_horizontal"
+                android:text="@string/tillPayment"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/buygoods"
+                app:layout_constraintStart_toStartOf="@+id/buygoods"
+                app:layout_constraintTop_toBottomOf="@+id/buygoods" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/bar2_bg"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
+        android:src="@drawable/bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageView
+        android:id="@+id/withdraw"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:contentDescription="@string/background"
+        android:focusable="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/number"
+        app:layout_constraintEnd_toEndOf="@+id/bar2_bg"
+        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintStart_toStartOf="@+id/bar2_bg"
+        app:layout_constraintTop_toTopOf="@+id/bar2_bg" />
+
+
+    <TextView
+        android:id="@+id/other_number"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gotham"
+        android:gravity="center_horizontal"
+        android:text="@string/otherNumber"
+        android:textColor="@color/colorTabNormal"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="@+id/withdraw"
+        app:layout_constraintStart_toStartOf="@+id/withdraw"
+        app:layout_constraintTop_toBottomOf="@+id/withdraw" />
+
+    <ImageView
+        android:id="@+id/bank"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:contentDescription="@string/background"
+        android:focusable="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bank"
+        app:layout_constraintStart_toEndOf="@+id/withdraw"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <TextView
+        android:id="@+id/top_up"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gotham"
+        android:gravity="center_horizontal"
+        android:text="@string/account_transfer"
+        android:textColor="@color/colorTabNormal"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@+id/bank"
+        app:layout_constraintStart_toStartOf="@+id/bank"
+        app:layout_constraintTop_toBottomOf="@+id/bank" />
+
+
+</android.support.constraint.ConstraintLayout>

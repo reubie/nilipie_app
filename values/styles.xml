@@ -1,0 +1,74 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- disable multi-touch throughout entire app -->
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+
+        <!--  Customize your theme here.  -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlHighlight">@color/colorLightAccent</item>
+
+    </style>
+
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+
+    <style name="UnderlineEditText" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="CustomTitleTextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SwitchCompatStyle">
+        <item name="thumbTint">@drawable/switch_color</item>
+        <item name="trackTint">@drawable/switch_color_track</item>
+    </style>
+
+    <style name="TextAppearance.FontPath" parent="android:TextAppearance">
+        <!-- Custom Attr-->
+        <item name="fontFamily">@font/gotham</item>
+    </style>
+
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/gotham</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColorPrimaryInverse">@color/colorWhite</item>
+        <item name="colorControlNormal">@android:color/white</item>
+    </style>
+
+    <style name="CustomTheme" parent="AppTheme">
+        <item name="defaultDarkTextColor">@color/colorPrimaryDark</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="defaultTextColor">@color/colorAccent</item>
+        <item name="defaultPreviousButtonColor">@color/colorAccent</item>
+        <item name="defaultNextButtonColor">@color/colorPrimary</item>
+        <item name="defaultToolBarBackgroundColor">@color/colorPrimary</item>
+        <item name="defaultButtonTextColor">@color/superWhite</item>
+        <item name="defaultNextLineColor">@color/colorNext</item>
+        <item name="defaultVisitedDotColor">@color/colorVisited</item>
+        <item name="defaultClickedLineColor">@color/colorAccent</item>
+
+    </style>
+
+
+</resources>

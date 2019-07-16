@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1B2647</color>
+    <color name="colorPrimaryDark">#0f4356</color>
+    <color name="colorPrimaryTransparent">#F20f4457</color>
+
+    <color name="colorAccent">#ff8528</color>
+    <color name="colorLightAccent">#61FF8528</color>
+
+    <color name="colorSecondary">#de5a03</color>
+    <color name="colorGrey">#e2e2e2</color>
+
+    <color name="limeGreen">#DCEDC8</color>
+    <color name="lightGreen">#4CAF50</color>
+    <color name="darkGreen">#33691E</color>
+    <color name="colorVisited">#F57C00</color>
+    <color name="colorNext">#30FF9800</color>
+    <color name="ripple_dark">#33ffffff</color>
+
+
+    <color name="lender_colorVisited">#c23829</color>
+    <color name="lender_colorNext">#92c3564a</color>
+
+    <color name="lender_colorPrimary">#453267</color>
+    <color name="lender_colorAccent">#FF0000</color>
+    <color name="lender_colorPrimaryDark">#25173d</color>
+
+    <color name="colorText">#1e1e1e</color>
+
+    <color name="colorAccentLight">#adc691</color>
+    <color name="dark_lighter_gray">#cecece</color>
+
+    <color name="navyWhite">#453267</color>
+    <color name="colorWindowBackground">#f0f0f0</color>
+    <color name="colorWhite">#f0f0f0</color>
+    <color name="superWhite">#ffffff</color>
+    <color name="colorTabNormal">#666666</color>
+    <color name="colorTabSelected">@color/colorPrimary</color>
+    <color name="colorWhitish">#453267</color>
+    <color name="colorBlackish">#8e8e8e</color>
+    <color name="colorBlack">#000000</color>
+    <color name="lighter_gray">#ddd</color>
+    <color name="colorHeader">#e0e0e0</color>
+
+</resources>
